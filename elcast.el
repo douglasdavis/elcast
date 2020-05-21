@@ -58,7 +58,7 @@
     (if (and exe (file-exists-p exe))
         (start-process "elcast" buff exe
                        "--quiet" "--vid=no" speed url)
-      (user-error (format "%s doesn't exist" exe)))))
+      (user-error "Check `elcast-mpv-executable' (not found)"))))
 
 ;;;###autoload
 (defun elcast-play ()
