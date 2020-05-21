@@ -28,7 +28,7 @@
 ;;; Code:
 
 
-(require 'elfeed)
+(require 'elfeed-show)
 
 (defgroup elcast nil
   "Tool for playing podcasts from `elfeed' enclosures."
@@ -67,7 +67,8 @@
   (let ((entry elfeed-show-entry))
     (if entry
         (elcast--launch-for-url (elcast--get-url entry))
-      (user-error "No show entry."))))
+      (user-error "No show entry"))))
 
 (provide 'elcast)
+
 ;;; elcast.el ends here
