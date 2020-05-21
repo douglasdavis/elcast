@@ -1,4 +1,4 @@
-;;; elcast.el --- Play elfeed podcast enclosures with mpv.  -*- lexical-binding: t; -*-
+;;; elcast.el --- Play Elfeed podcast enclosures with mpv.  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2020  Doug Davis
 
@@ -23,7 +23,7 @@
 
 ;;; Commentary:
 
-;; This is a tiny package for playing podcasts with `elfeed' in mpv.
+;; A tiny package for playing podcasts with `elfeed' in mpv.
 
 ;;; Code:
 
@@ -31,15 +31,15 @@
 (require 'elfeed)
 
 (defgroup elcast nil
-  "Tool for playing podcasts from elfeed enclosures"
+  "Tool for playing podcasts from elfeed enclosures."
   :group 'tools)
 
 (defcustom elcast-playback-speed 1.25
-  "Playback speed for listening with mpv"
+  "Playback speed for listening with mpv."
   :type 'number)
 
 (defcustom elcast-buffer-name "*elcast*"
-  "Name of buffer for mpv process"
+  "Name of buffer for mpv process."
   :type 'string)
 
 (defvar elcast-mpv-executable (executable-find "mpv")
