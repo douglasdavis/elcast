@@ -55,7 +55,7 @@
   (let ((exe elcast-mpv-executable)
         (buff elcast-buffer-name)
         (speed (format "--speed=%.2f" elcast-playback-speed)))
-    (if (file-exists-p exe)
+    (if (and exe (file-exists-p exe))
         (start-process "elcast" buff exe
                        "--quiet" "--vid=no" speed url)
       (user-error (format "%s doesn't exist" exe)))))
