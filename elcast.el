@@ -31,7 +31,7 @@
 (require 'elfeed)
 
 (defgroup elcast nil
-  "Tool for playing podcasts from elfeed enclosures."
+  "Tool for playing podcasts from `elfeed' enclosures."
   :group 'tools)
 
 (defcustom elcast-playback-speed 1.25
@@ -46,7 +46,7 @@
   "Path to the mpv executable.")
 
 (defun elcast--get-url (show-entry)
-  "Get the enclosure url associated wity SHOW-ENTRY."
+  "Get the enclosure url associated with SHOW-ENTRY."
   (let ((enclosure (elfeed-entry-enclosures show-entry)))
     (car (elt enclosure 0))))
 
