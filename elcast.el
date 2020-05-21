@@ -54,9 +54,11 @@
   "Build the mpv command to play URL."
   (let ((exe elcast-mpv-executable)
         (buff elcast-buffer-name)
-        (speed (format "--speed=%.2f" elcast-playback-speed))) ;
-    (start-process "elcast" buff exe
-                   "--quiet" "--vid=no" speed url)))
+        (speed (format "--speed=%.2f" elcast-playback-speed)))
+    (if (file-exists-p exe)
+        (start-process "elcast" buff exe
+                       "--quiet" "--vid=no" speed url)
+      (user-error (format "%s doesn't exist" exe)))))
 
 ;;;###autoload
 (defun elcast-play ()
